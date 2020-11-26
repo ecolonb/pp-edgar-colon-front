@@ -11,6 +11,7 @@
         type="password"
         placeholder="password"
         name="password"
+        autocomplete="new-password"
         [(ngModel)]="loginData.password"
       />
       <p class="errors" *ngIf="withError">Username or password are incorrect</p>
@@ -19,3 +20,4 @@
     </form>
   </div>
 </div>
+<app-modal-loading [active]="loading"></app-modal-loading>

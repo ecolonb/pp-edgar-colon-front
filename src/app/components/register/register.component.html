@@ -1,0 +1,49 @@
+<div class="register-page">
+  <div class="login-container">
+    <form action="" class="form" (submit)="submit($event)">
+      <div class="row-input">
+        <label for="name">Name</label>
+        <input type="text" placeholder="Name" name="name" />
+      </div>
+      <div class="row-input">
+        <label for="lastname">Lastname</label>
+        <input type="text" placeholder="Lastname" name="lastname" />
+      </div>
+      <div class="row-input">
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" name="email" />
+      </div>
+      <div class="row-input">
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" name="password" />
+      </div>
+      <div class="row-input">
+        <label for="birthdate">birthdate</label>
+        <input type="date" placeholder="Birthdate" name="birthdate" />
+      </div>
+      <div class="row-input">
+        <label for="birthdate">Gender</label>
+        <mat-form-field appearance="fill">
+          <select matNativeControl required>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </mat-form-field>
+        <!-- <mat-form-field appearance="fill">
+          <mat-select>
+            <mat-option value="m"> Male </mat-option>
+            <mat-option value="f"> Female </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+      </div>
+      <div class="row-input">
+        <label for="hobby">Hobby</label>
+        <input type="text" placeholder="Hobby" name="hobby" />
+      </div>
+      <button type="submit">sign up</button>
+    </form>
+  </div>
+</div>
+<!-- <app-modal-loading [active]="loading"></app-modal-loading> -->

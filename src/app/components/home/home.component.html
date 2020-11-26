@@ -1,1 +1,59 @@
-<p>home works!</p>
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <div class="right-options">
+    <span class="example-spacer"></span>
+
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="logOut()"
+    >
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<div class="table-container">
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Lastname</th>
+          <th>Email</th>
+          <th>Cellphone</th>
+          <th>Gender</th>
+          <th>Hobby</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user?.lastName }}</td>
+          <td>{{ user?.email }}</td>
+          <td>{{ user?.cellphone }}</td>
+          <td>{{ user?.gender }}</td>
+          <td>{{ user?.hobby }}</td>
+          <td><button>x</button></td>
+        </tr>
+        <tr>
+          <td>Title</td>
+          <td>Content</td>
+          <td>Content</td>
+          <td>Content</td>
+          <td>Content</td>
+          <td>Content</td>
+          <td><button>x</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

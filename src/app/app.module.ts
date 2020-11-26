@@ -8,18 +8,29 @@ import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ModalLoadingModule } from './components/modal-loading/modal-loading.module';
+import { JwtInterceptorService } from './services/jwt-interceptor.service';
+import { RegisterComponent } from './components/register/register.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent],
   imports: [
+    ModalLoadingModule,
     FormsModule,
     BrowserModule,
+    MaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    ,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

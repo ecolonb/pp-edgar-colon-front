@@ -7,6 +7,7 @@ export const environment = {
   apiUrl: 'https://pp-edgar-colon-back.herokuapp.com/api',
   endPoints: {
     login: '/login',
+    allUsers: '/users/all',
   },
 };
 
