@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://pp-edgar-colon-back.herokuapp.com/api',
+  endPoints: {
+    login: '/login',
+  },
 };
 
 /*
