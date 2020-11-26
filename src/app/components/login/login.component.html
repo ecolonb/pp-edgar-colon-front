@@ -16,7 +16,10 @@
       />
       <p class="errors" *ngIf="withError">Username or password are incorrect</p>
       <button type="submit">login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
+      <p class="message">
+        Not registered?
+        <a routerLink="/register">Create an account</a>
+      </p>
     </form>
   </div>
 </div>

@@ -8,6 +8,7 @@ export const environment = {
   endPoints: {
     login: '/login',
     allUsers: '/users/all',
+    newUser: '/users/new',
   },
 };
 

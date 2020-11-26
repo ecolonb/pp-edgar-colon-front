@@ -26,8 +26,11 @@ export class UserService {
   public getUsers(search): Observable<any> {
     const target = search === 'all' ? '' : search;
     return this.http.get(
-      env.apiUrl.concat(env.endPoints.allUsers.concat(`/${target}`))
+      env.apiUrl.concat(env.endPoints.allUsers, `/${target}`)
     );
+  }
+  public newUser(userData): Observable<any> {
+    return this.http.post(env.apiUrl.concat(env.endPoints.newUser), userData);
   }
   public setLogged(newState): void {
     this.authState.next(newState);

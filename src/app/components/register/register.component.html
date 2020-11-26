@@ -3,47 +3,77 @@
     <form action="" class="form" (submit)="submit($event)">
       <div class="row-input">
         <label for="name">Name</label>
-        <input type="text" placeholder="Name" name="name" />
+        <input
+          type="text"
+          placeholder="Name"
+          [(ngModel)]="formData.name"
+          name="name"
+        />
       </div>
       <div class="row-input">
         <label for="lastname">Lastname</label>
-        <input type="text" placeholder="Lastname" name="lastname" />
+        <input
+          type="text"
+          placeholder="Lastname"
+          name="lastname"
+          [(ngModel)]="formData.lastName"
+        />
+      </div>
+      <div class="row-input">
+        <label for="email">Cellphone</label>
+        <input
+          type="text"
+          placeholder="Cellphone"
+          name="cellphone"
+          [(ngModel)]="formData.cellphone"
+        />
       </div>
       <div class="row-input">
         <label for="email">Email</label>
-        <input type="email" placeholder="Email" name="email" />
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          [(ngModel)]="formData.email"
+        />
       </div>
       <div class="row-input">
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" name="password" />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          [(ngModel)]="formData.password"
+        />
       </div>
       <div class="row-input">
         <label for="birthdate">birthdate</label>
-        <input type="date" placeholder="Birthdate" name="birthdate" />
+        <input
+          type="date"
+          placeholder="Birthdate"
+          name="birthdate"
+          [(ngModel)]="formData.birthdate"
+        />
       </div>
       <div class="row-input">
-        <label for="birthdate">Gender</label>
-        <mat-form-field appearance="fill">
-          <select matNativeControl required>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
-        </mat-form-field>
-        <!-- <mat-form-field appearance="fill">
-          <mat-select>
-            <mat-option value="m"> Male </mat-option>
-            <mat-option value="f"> Female </mat-option>
-          </mat-select>
-        </mat-form-field> -->
+        <label for="gender">Gender</label>
+        <select name="gender" required [(ngModel)]="formData.gender">
+          <option value="def">Select gender</option>
+          <option value="m">Male</option>
+          <option value="f">Female</option>
+        </select>
       </div>
       <div class="row-input">
         <label for="hobby">Hobby</label>
-        <input type="text" placeholder="Hobby" name="hobby" />
+        <input
+          type="text"
+          placeholder="Hobby"
+          name="hobby"
+          [(ngModel)]="formData.hobby"
+        />
       </div>
       <button type="submit">sign up</button>
     </form>
   </div>
 </div>
-<!-- <app-modal-loading [active]="loading"></app-modal-loading> -->
+<app-modal-loading [active]="loading"></app-modal-loading>

@@ -13,13 +13,25 @@
   .form {
     z-index: 1;
     background: #ffffff;
-    max-width: 360px;
-    padding: 45px;
+    padding: 21px;
     text-align: center;
+    min-width: 500px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    .row-input label {
-      float: left;
-      margin-left: 8px;
+    .row-input {
+      flex-direction: column;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 21px;
+      select {
+        width: 100%;
+        border-radius: 5px;
+        height: 44px;
+      }
+      label {
+        float: left;
+        margin-left: 8px;
+      }
     }
     .errors {
       color: #d57c7c;

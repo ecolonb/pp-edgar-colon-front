@@ -8,9 +8,15 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  loginData = {
+  formData = {
     email: '',
     password: '',
+    name: '',
+    lastName: '',
+    cellphone: '',
+    hobby: '',
+    birthdate: '',
+    gender: '',
   };
 
   withError = false;
@@ -22,5 +28,15 @@ export class RegisterComponent implements OnInit {
   submit(event): void {
     event.preventDefault();
     this.loading = true;
+    this.userService
+      .newUser(this.formData)
+      .toPromise()
+      .then((resp) => {
+        console.log('Resp', resp);
+      })
+      .catch((err) => {
+        this.loading = false;
+        console.log(err);
+      });
   }
 }
