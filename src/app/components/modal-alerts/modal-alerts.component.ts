@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,10 @@ import { Router } from '@angular/router';
 })
 export class ModalAlertsComponent {
   @Input() active: boolean;
-
+  @Input() type: string;
+  @Output()
+  public closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() public deleteUserEvent: EventEmitter<any> = new EventEmitter<any>();
   constructor(private router: Router) {
     // this.active = false;
     console.log('tgus');
@@ -16,5 +19,11 @@ export class ModalAlertsComponent {
 
   public goToSignIn(): void {
     this.router.navigateByUrl('/login');
+  }
+  public deleteUser(): void {
+    this.deleteUserEvent.emit(true);
+  }
+  public cancelEvt(status): void {
+    this.closeModal.emit(status);
   }
 }

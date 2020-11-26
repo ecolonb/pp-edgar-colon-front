@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { MaterialModule } from '../../material.module';
+import { ModalAlertsModule } from '../modal-alerts/modal-alerts.module';
 
 const routes: Routes = [
   {
@@ -14,7 +15,12 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, MaterialModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    ModalAlertsModule,
+    MaterialModule,
+    RouterModule.forChild(routes),
+  ],
   exports: [RouterModule],
 })
 export class HomeModule {}

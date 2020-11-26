@@ -9,6 +9,7 @@ export const environment = {
     login: '/login',
     allUsers: '/users/all',
     newUser: '/users/new',
+    deleteUser: '/users/delete',
   },
 };
 

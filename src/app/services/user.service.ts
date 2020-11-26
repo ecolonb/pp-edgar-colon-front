@@ -32,6 +32,12 @@ export class UserService {
   public newUser(userData): Observable<any> {
     return this.http.post(env.apiUrl.concat(env.endPoints.newUser), userData);
   }
+
+  public deleteUser(userId): Observable<any> {
+    return this.http.delete(
+      env.apiUrl.concat(env.endPoints.deleteUser, `/${userId}`)
+    );
+  }
   public setLogged(newState): void {
     this.authState.next(newState);
   }

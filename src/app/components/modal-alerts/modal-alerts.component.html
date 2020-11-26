@@ -1,6 +1,21 @@
 <div *ngIf="active" class="modal-alerts">
   <div class="modal-alerts-form">
-    <h3>The user was created correctly</h3>
-    <button (click)="goToSignIn()">Go to Sign In</button>
+    <ng-container *ngIf="type === 'createdUser'">
+      <h3>The user was created correctly</h3>
+      <button (click)="goToSignIn()">Go to Sign In</button>
+    </ng-container>
+    <ng-container *ngIf="type === 'confirmDelete'">
+      <h3>Are you sure to delete the user?</h3>
+      <div class="buttons-section">
+        <button (click)="deleteUser()">Delete</button>
+        <button (click)="cancelEvt(false)">Cancel</button>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="type === 'deletedUser'">
+      <h3>user successfully removed</h3>
+      <div class="buttons-section">
+        <button (click)="cancelEvt(true)">Ok</button>
+      </div>
+    </ng-container>
   </div>
 </div>

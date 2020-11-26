@@ -9,7 +9,10 @@
   <span>My App</span>
   <div class="right-options">
     <span class="example-spacer"></span>
-
+    <button mat-icon-button style="margin-right: 55px" (click)="newUser()">
+      <mat-icon>add</mat-icon>New user
+    </button>
+    <span class="example-spacer"></span>
     <button
       mat-icon-button
       class="example-icon"
@@ -42,18 +45,15 @@
           <td>{{ user?.cellphone }}</td>
           <td>{{ user?.gender }}</td>
           <td>{{ user?.hobby }}</td>
-          <td><button>x</button></td>
-        </tr>
-        <tr>
-          <td>Title</td>
-          <td>Content</td>
-          <td>Content</td>
-          <td>Content</td>
-          <td>Content</td>
-          <td>Content</td>
-          <td><button>x</button></td>
+          <td><button (click)="showConfirmDel(user._id)">x</button></td>
         </tr>
       </tbody>
     </table>
   </section>
 </div>
+<app-modal-alerts
+  [active]="showConfirm"
+  [type]="typeAlert"
+  (closeModal)="closeModal($event)"
+  (deleteUserEvent)="deleteUserEvent()"
+></app-modal-alerts>

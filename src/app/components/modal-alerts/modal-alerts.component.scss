@@ -11,6 +11,14 @@
   align-items: center;
   justify-content: center;
   z-index: 100000000;
+  .buttons-section {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    button:nth-child(1) {
+      margin-right: 12px;
+    }
+  }
   .modal-alerts-form {
     display: flex;
     justify-content: center;
