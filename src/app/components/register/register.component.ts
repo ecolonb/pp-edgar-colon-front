@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
 
   withError = false;
   loading = false;
+  createdUser = false;
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {}
@@ -33,6 +34,7 @@ export class RegisterComponent implements OnInit {
       .toPromise()
       .then((resp) => {
         console.log('Resp', resp);
+        this.createdUser = true;
       })
       .catch((err) => {
         this.loading = false;
